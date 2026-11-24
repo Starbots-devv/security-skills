@@ -1,0 +1,180 @@
+{
+  "$id": "urn:starbots:contracts:1.0.0:Evidence",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "client_id": {
+      "pattern": "^[A-Za-z0-9_-]{1,64}$",
+      "type": "string"
+    },
+    "created_at": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[A-Za-z0-9_-]{1,64}$",
+      "type": "string"
+    },
+    "kind": {
+      "const": "Evidence"
+    },
+    "payload": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_path": {
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "artifact_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        "authorized_scope_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,64}$",
+          "type": "string"
+        },
+        "classification": {
+          "enum": [
+            "synthetic",
+            "public",
+            "internal",
+            "confidential"
+          ]
+        },
+        "collector": {
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "evidence_level": {
+          "enum": [
+            "measured",
+            "inventory",
+            "assumption",
+            "synthetic",
+            "unknown"
+          ]
+        },
+        "evidence_type": {
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "observed_at": {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+          "type": "string"
+        },
+        "redaction_status": {
+          "enum": [
+            "redacted",
+            "synthetic",
+            "no_sensitive_data",
+            "incomplete"
+          ]
+        },
+        "rules_digest": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source": {
+          "enum": [
+            "local",
+            "manual",
+            "official_url",
+            "tool"
+          ]
+        },
+        "source_uri": {
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "tool_version": {
+          "anyOf": [
+            {
+              "maxLength": 10000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "valid_until": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "evidence_type",
+        "source",
+        "source_uri",
+        "observed_at",
+        "valid_until",
+        "classification",
+        "evidence_level",
+        "artifact_path",
+        "artifact_sha256",
+        "redaction_status",
+        "collector",
+        "tool_version",
+        "rules_digest",
+        "authorized_scope_id"
+      ],
+      "type": "object"
+    },
+    "producer": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "source_commit": {
+          "pattern": "^(?:[a-f0-9]{40}|UNRELEASED)$",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 10000,
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "source_commit"
+      ],
+      "type": "object"
+    },
+    "project_id": {
+      "pattern": "^[A-Za-z0-9_-]{1,64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "client_id",
+    "project_id",
+    "created_at",
+    "producer",
+    "payload"
+  ],
+  "title": "Evidence",
+  "type": "object"
+}

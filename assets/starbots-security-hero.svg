@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Starbots Security Skills</title>
+  <desc id="desc">A violet evidence path crosses three review checkpoints against a dark background.</desc>
+  <defs>
+    <linearGradient id="surface" x2="1" y2="1">
+      <stop stop-color="#111024"/>
+      <stop offset="1" stop-color="#1D153C"/>
+    </linearGradient>
+    <linearGradient id="line" x2="1">
+      <stop stop-color="#7C5CFF"/>
+      <stop offset="1" stop-color="#D9C9FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="24" fill="url(#surface)"/>
+  <path d="M46 228h1108" stroke="#574A8A" stroke-width="1" opacity=".48"/>
+  <path d="M46 236h1108" stroke="#574A8A" stroke-width="1" opacity=".28"/>
+  <g fill="none" stroke="#8B72DF" opacity=".24">
+    <circle cx="971" cy="155" r="119"/><circle cx="971" cy="155" r="87"/>
+    <circle cx="971" cy="155" r="55"/>
+  </g>
+  <path d="M738 173h118l34-39h81l34 39h143" fill="none" stroke="url(#line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#D9C9FF" stroke="#231948" stroke-width="6">
+    <circle cx="856" cy="173" r="10"/><circle cx="931" cy="134" r="10"/><circle cx="1005" cy="173" r="10"/>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#FFFFFF">
+    <text x="48" y="64" font-size="16" font-weight="700" letter-spacing="3" fill="#BEA8FF">STARBOTS / SECURITY</text>
+    <text x="46" y="128" font-size="47" font-weight="700">Security Skills</text>
+    <text x="48" y="168" font-size="20" fill="#DFD8EF">Evidence you can inspect. Boundaries you can test.</text>
+    <text x="48" y="269" font-size="14" letter-spacing="1" fill="#C8BBE7">APPLICATION &amp; API   /   SUPPLY CHAIN   /   AGENTS &amp; TOOLS</text>
+  </g>
+</svg>

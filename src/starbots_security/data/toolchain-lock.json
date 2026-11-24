@@ -1,0 +1,339 @@
+{
+  "files": {
+    "licenses/osv-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "configs/trivy.yaml": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f",
+    "licenses/trivy-LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "osv-db/osv-scanner/PyPI/all.zip": "fa7a991d4ef3875c7f18f272d77f776f298a1ca71a169d84a91f572de8e3c401",
+    "configs/empty-ignore": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bin/gitleaks": "88f91962aa2f93ac6ab281d553b9e125f5197bbbce38f9f2437f7299c32e5509",
+    "licenses/gitleaks-LICENSE": "e3884b252b3bfc045e55be43a34d1e80da070bc6f804ac95bf4660e97d62ebc6",
+    "osv-db/osv-scanner/npm/all.zip": "4829349eaa1953bcd29babfe60877fd4af1386e0f0cfeefebe90826c994f147a",
+    "bin/osv-scanner": "160c6253e2922e9e0a6a9771c5c4c40a4b3c6090b34a3cdd5e80c96cc2e4218b",
+    "bin/trivy": "1f889576636db0623539cb339df7d06c40ebf39e7919489eafa1160e29808f19",
+    "configs/osv-scanner.toml": "4aeb31b3172bcc4d42acee4350e3d49989bfa47e5081aa28bc3aef96d9afe05e",
+    "configs/gitleaks.toml": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf"
+  },
+  "local_use_only": true,
+  "review": {
+    "reviewed_at_utc": "2026-10-18T11:09:29Z",
+    "scope": "Scanner acquisition and inert inspection only",
+    "tools": [
+      {
+        "name": "gitleaks",
+        "version": "8.30.1",
+        "platform": "linux/amd64",
+        "path": "bin/gitleaks",
+        "binary_sha256": "88f91962aa2f93ac6ab281d553b9e125f5197bbbce38f9f2437f7299c32e5509",
+        "artifact": "gitleaks_8.30.1_linux_x64.tar.gz",
+        "artifact_sha256": "551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb",
+        "source_url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz",
+        "tag": "v8.30.1",
+        "source_commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+        "release_immutable": false,
+        "engine_license": "MIT",
+        "license_path": "licenses/gitleaks-LICENSE",
+        "license_sha256": "e3884b252b3bfc045e55be43a34d1e80da070bc6f804ac95bf4660e97d62ebc6",
+        "source_archive_sha256": "d174fb31837944fe093f68085a2497b418c888a8524b11c5f1ed316822ea92a2",
+        "schema": "JSON Finding[]; no embedded schema version; pin engine",
+        "execution_status": "not executed during acquisition",
+        "signature_status": "not cryptographically verified; same-origin checksums establish integrity only",
+        "rules_commit": "83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+        "rules_license": "MIT",
+        "rules_path": "configs/gitleaks.toml",
+        "rules_sha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+        "inert_binary_metadata": {
+          "elf": true,
+          "class": 2,
+          "machine": 62,
+          "sha256_rechecked": true,
+          "endianness": 1
+        },
+        "source_archive_url": "https://codeload.github.com/gitleaks/gitleaks/zip/83d9cd684c87d95d656c1458ef04895a7f1cbd8e",
+        "latest_tag_verified": true
+      },
+      {
+        "name": "osv",
+        "version": "2.7.0",
+        "platform": "linux/amd64",
+        "path": "bin/osv-scanner",
+        "binary_sha256": "160c6253e2922e9e0a6a9771c5c4c40a4b3c6090b34a3cdd5e80c96cc2e4218b",
+        "artifact": "osv-scanner_linux_amd64",
+        "artifact_sha256": "160c6253e2922e9e0a6a9771c5c4c40a4b3c6090b34a3cdd5e80c96cc2e4218b",
+        "source_url": "https://github.com/google/osv-scanner/releases/download/v2.7.0/osv-scanner_linux_amd64",
+        "tag": "v2.7.0",
+        "source_commit": "bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+        "release_immutable": false,
+        "engine_license": "Apache-2.0",
+        "license_path": "licenses/osv-LICENSE",
+        "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "source_archive_sha256": "14c3cf8a03e812cc63ecb8605b5363739ce872c834733182a9ae5fa2fb190db3",
+        "schema": "VulnerabilityResults JSON; no embedded schema version; advisories OSV1.9.0",
+        "execution_status": "not executed during acquisition",
+        "signature_status": "not cryptographically verified; same-origin checksums establish integrity only",
+        "inert_binary_metadata": {
+          "elf": true,
+          "class": 2,
+          "machine": 62,
+          "sha256_rechecked": true,
+          "endianness": 1
+        },
+        "source_archive_url": "https://codeload.github.com/google/osv-scanner/zip/bfe2f84abd2f09fe0b83ba7f6dad40d296762f40",
+        "latest_tag_verified": true
+      },
+      {
+        "name": "trivy",
+        "version": "0.76.0",
+        "platform": "linux/amd64",
+        "path": "bin/trivy",
+        "binary_sha256": "1f889576636db0623539cb339df7d06c40ebf39e7919489eafa1160e29808f19",
+        "artifact": "trivy_0.76.0_Linux-64bit.tar.gz",
+        "artifact_sha256": "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7",
+        "source_url": "https://github.com/aquasecurity/trivy/releases/download/v0.76.0/trivy_0.76.0_Linux-64bit.tar.gz",
+        "tag": "v0.76.0",
+        "source_commit": "531360e5d2a88e732373f1614ba99a38738538b8",
+        "release_immutable": true,
+        "engine_license": "Apache-2.0",
+        "license_path": "licenses/trivy-LICENSE",
+        "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "source_archive_sha256": "5dba572e73d5d43914a6abdf799f45b2e0829185b28aa0f73edbe574a0cf4bd5",
+        "schema": "Trivy JSON SchemaVersion2 expected; verified by the runner at execution time",
+        "execution_status": "not executed during acquisition",
+        "signature_status": "not cryptographically verified; same-origin checksums establish integrity only",
+        "rules_commit": "ac85645895edcb66752315b3badbb9edb50f9f3b",
+        "rules_license": "MIT",
+        "rules_license_sha256": "2c3ff37f4059f312fb60fd567b2fc44ecf8603c6fb9a663f513e52c6ffd74022",
+        "rules_source_archive_sha256": "e6dec3c7cb89cdaefc5bb0742e304e33e30928d91d5a8f5d30c93a73402c2f4c",
+        "inert_binary_metadata": {
+          "elf": true,
+          "class": 2,
+          "machine": 62,
+          "sha256_rechecked": true,
+          "endianness": 1
+        },
+        "source_archive_url": "https://codeload.github.com/aquasecurity/trivy/zip/531360e5d2a88e732373f1614ba99a38738538b8",
+        "latest_tag_verified": true
+      }
+    ],
+    "osv_snapshots": [
+      {
+        "ecosystem": "npm",
+        "license_status": "GHSA CC-BY-4.0; MAL Apache-2.0; EEF CC-BY-4.0; GSD CC0-1.0",
+        "updated": "2026-10-18T02:02:50.888Z",
+        "generation": "1792288970743329",
+        "source_url": "https://storage.googleapis.com/osv-vulnerabilities/npm/all.zip?generation=1792288970743329",
+        "size": 218456532,
+        "sha256": "4829349eaa1953bcd29babfe60877fd4af1386e0f0cfeefebe90826c994f147a",
+        "path": "osv-db/osv-scanner/npm/all.zip",
+        "freshness_policy": "max age7days; historical evidence only after expiry",
+        "as_of": "2026-10-18T08:02:50Z",
+        "expires_at": "2026-10-25T08:02:50Z",
+        "transport_size_and_gcs_md5_match": true
+      },
+      {
+        "ecosystem": "PyPI",
+        "license_status": "GHSA/PyPA/OSS-Fuzz CC-BY-4.0; MAL Apache-2.0",
+        "updated": "2026-10-18T02:02:48.203Z",
+        "generation": "1792288968077842",
+        "source_url": "https://storage.googleapis.com/osv-vulnerabilities/PyPI/all.zip?generation=1792288968077842",
+        "size": 36436224,
+        "sha256": "fa7a991d4ef3875c7f18f272d77f776f298a1ca71a169d84a91f572de8e3c401",
+        "path": "osv-db/osv-scanner/PyPI/all.zip",
+        "freshness_policy": "max age7days; historical evidence only after expiry",
+        "as_of": "2026-10-18T08:02:48Z",
+        "expires_at": "2026-10-25T08:02:48Z",
+        "transport_size_and_gcs_md5_match": true
+      }
+    ],
+    "containers": [
+      {
+        "repository": "library/alpine",
+        "tag": "3.24.2",
+        "indexDigest": "sha256:294b683cb724975bec92580e1e685676bd4b50bda910ddb8c51d4cabeaec77e6",
+        "selectedDigest": "sha256:d56c381f961d307a21b3ca004cf1e3910f106644aefb1f43e654c8a56c4fd395",
+        "manifestSha256": "d56c381f961d307a21b3ca004cf1e3910f106644aefb1f43e654c8a56c4fd395",
+        "layers": [
+          {
+            "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+            "digest": "sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5",
+            "size": 3849738
+          }
+        ],
+        "status": "metadata only; no pull/run"
+      },
+      {
+        "repository": "library/postgres",
+        "tag": "18.6-alpine3.24",
+        "indexDigest": "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+        "selectedDigest": "sha256:d8703cd7fba306b9fec9268ecedfa8a966846c053036a60e3635791957eb2f66",
+        "manifestSha256": "d8703cd7fba306b9fec9268ecedfa8a966846c053036a60e3635791957eb2f66",
+        "layers": [
+          {
+            "digest": "sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5",
+            "size": 3849738
+          },
+          {
+            "digest": "sha256:976cd45ecd0f5afcb47e7ee68e70f2f8632a1e621e465632cf38a6bd06563aad",
+            "size": 968
+          },
+          {
+            "digest": "sha256:d8f47ca787e9d08adaacc8d2a9d91e78e65e37706ef159ee52daae848c58bdd9",
+            "size": 901406
+          },
+          {
+            "digest": "sha256:30b4807a96db4dc1287cec075f24db70aad9e7b1307dcbc52a20e26a98e12cfe",
+            "size": 116
+          },
+          {
+            "digest": "sha256:23ebd67725253ed5be1425c468541541ba6034ec0acce3fc3c388df36c503d70",
+            "size": 115260137
+          },
+          {
+            "digest": "sha256:e5545be08ab6c7da866f9eb293b5583146b729e72ec499e3bae843b808aa8636",
+            "size": 19008
+          },
+          {
+            "digest": "sha256:a7fe9499841704ecc44978c38c723c55ed198cef686e90cdee890e5609a9c6de",
+            "size": 128
+          },
+          {
+            "digest": "sha256:176ab66edd3909a2f90886b538b88fabfc9751709dd6bf335c9374448c6f77e5",
+            "size": 6109
+          },
+          {
+            "digest": "sha256:5ef7ae0adbc8a98b2be3aa5546451f12ccb858a38079d10be3c4a0717ae6dfc5",
+            "size": 183
+          }
+        ],
+        "status": "metadata only; no image pull or execution"
+      }
+    ],
+    "blockers": [
+      "Signatures/SLSA not cryptographically verified",
+      "Complete transitive notices not yet assembled; no redistribution clearance",
+      "Runtime isolation and network denial are checked by the runner at execution time"
+    ],
+    "fixture_pairs": [
+      {
+        "package": "lodash",
+        "corrected_public_metadata": "lodash-4.18.0-metadata.json",
+        "vulnerable": "4.17.20",
+        "package_installed": false,
+        "corrected": "4.18.0",
+        "ecosystem": "npm",
+        "advisory_inventory": "lodash-snapshot-advisories.json"
+      },
+      {
+        "package": "requests",
+        "corrected_public_metadata": "requests-2.33.0-metadata.json",
+        "vulnerable": "2.30.0",
+        "package_installed": false,
+        "corrected": "2.33.0",
+        "ecosystem": "PyPI",
+        "advisory_inventory": "requests-snapshot-advisories.json"
+      }
+    ],
+    "config_files": [
+      {
+        "sha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+        "path": "configs/gitleaks.toml"
+      },
+      {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "path": "configs/empty-ignore"
+      },
+      {
+        "sha256": "4aeb31b3172bcc4d42acee4350e3d49989bfa47e5081aa28bc3aef96d9afe05e",
+        "path": "configs/osv-scanner.toml"
+      },
+      {
+        "sha256": "e3566b3a06430868d71e9287dfd6c6c520a3da027aabea01951d407ee131dc2f",
+        "path": "configs/trivy.yaml"
+      }
+    ],
+    "proposed_argv": {
+      "osv_pypi": [
+        "/tools/osv-scanner",
+        "scan",
+        "source",
+        "--offline",
+        "--no-resolve",
+        "--config",
+        "/config/osv-scanner.toml",
+        "--local-db-path",
+        "/db",
+        "--format",
+        "json",
+        "--output-file",
+        "/out/result.json",
+        "--lockfile",
+        "/fixture/requirements.txt"
+      ],
+      "osv_npm": [
+        "/tools/osv-scanner",
+        "scan",
+        "source",
+        "--offline",
+        "--no-resolve",
+        "--config",
+        "/config/osv-scanner.toml",
+        "--local-db-path",
+        "/db",
+        "--format",
+        "json",
+        "--output-file",
+        "/out/result.json",
+        "--lockfile",
+        "/fixture/package-lock.json"
+      ],
+      "trivy": [
+        "/tools/trivy",
+        "fs",
+        "--scanners",
+        "misconfig",
+        "--config",
+        "/config/trivy.yaml",
+        "--cache-dir",
+        "/tmp/trivy-cache",
+        "--skip-check-update",
+        "--skip-db-update",
+        "--skip-java-db-update",
+        "--skip-version-check",
+        "--disable-telemetry",
+        "--offline-scan",
+        "--ignorefile",
+        "/config/empty-ignore",
+        "--format",
+        "json",
+        "--output",
+        "/out/result.json",
+        "--exit-code",
+        "1",
+        "--timeout",
+        "60s",
+        "/fixture"
+      ],
+      "gitleaks": [
+        "/tools/gitleaks",
+        "dir",
+        "/fixture",
+        "--config",
+        "/config/gitleaks.toml",
+        "--gitleaks-ignore-path",
+        "/config/empty-ignore",
+        "--ignore-gitleaks-allow",
+        "--redact=100",
+        "--no-banner",
+        "--no-color",
+        "--report-format",
+        "json",
+        "--report-path",
+        "/out/result.json",
+        "--exit-code",
+        "1",
+        "--timeout",
+        "60"
+      ]
+    },
+    "redistribution_status": "NOT CLEARED: local use only; complete transitive binary/image notices unresolved; never commit acquired binaries, images or snapshot ZIPs to a repository"
+  }
+}

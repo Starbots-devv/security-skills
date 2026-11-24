@@ -1,0 +1,42 @@
+[
+  {
+    "evidence_present": false,
+    "expected": "BLOCKED",
+    "state": "PASS"
+  },
+  {
+    "evidence_present": true,
+    "expected": "READY",
+    "state": "PASS"
+  },
+  {
+    "evidence_present": false,
+    "expected": "BLOCKED",
+    "state": "FAIL"
+  },
+  {
+    "evidence_present": true,
+    "expected": "BLOCKED",
+    "state": "FAIL"
+  },
+  {
+    "evidence_present": false,
+    "expected": "BLOCKED",
+    "state": "UNKNOWN"
+  },
+  {
+    "evidence_present": true,
+    "expected": "BLOCKED",
+    "state": "UNKNOWN"
+  },
+  {
+    "evidence_present": false,
+    "expected": "BLOCKED",
+    "state": "NOT_APPLICABLE"
+  },
+  {
+    "evidence_present": true,
+    "expected": "READY",
+    "state": "NOT_APPLICABLE"
+  }
+]

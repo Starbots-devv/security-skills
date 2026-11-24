@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools==84.0.0", "wheel==0.48.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "starbots-security-skills"
+version = "0.1.0a0"
+description = "Agent security skills and a local CLI that produce hash-bound, verifiable review evidence."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+authors = [{ name = "Starbots" }]
+dependencies = ["jsonschema==4.26.0"]
+
+[project.urls]
+Homepage = "https://starbots.dev"
+Repository = "https://github.com/Starbots-devv/security-skills"
+
+[project.scripts]
+sb-security = "starbots_security.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+starbots_security = ["data/**/*.json", "data/**/*.md", "data/**/*.svg", "data/**/*.sql", "data/**/*.tf", "data/**/*.txt", "data/**/*.env"]

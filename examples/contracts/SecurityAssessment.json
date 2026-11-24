@@ -1,0 +1,56 @@
+{
+  "client_id": "fixture-0",
+  "created_at": "2026-10-17T00:00:00Z",
+  "id": "fixture-0",
+  "kind": "SecurityAssessment",
+  "payload": {
+    "assessed_at": "2026-10-17T00:00:00Z",
+    "controls": [
+      {
+        "evidence_refs": [],
+        "external_refs": [],
+        "id": "fixture-0",
+        "mandatory": false,
+        "rationale": "Synthetic contract fixture; not observed customer data",
+        "state": "PASS"
+      }
+    ],
+    "coverage": {
+      "excluded": [],
+      "missing": [],
+      "performed": []
+    },
+    "evidence_refs": [],
+    "expires_at": "2026-11-01T00:00:00Z",
+    "findings": [],
+    "policy_digest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "policy_id": "fixture-0",
+    "policy_version": "Synthetic contract fixture; not observed customer data",
+    "readiness": {
+      "reasons": [],
+      "state": "READY"
+    },
+    "scope": "Synthetic contract fixture; not observed customer data",
+    "subject_ref": {
+      "artifacts": [
+        {
+          "path": "Synthetic contract fixture; not observed customer data",
+          "role": "Synthetic contract fixture; not observed customer data",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ],
+      "manifest_path": "Synthetic contract fixture; not observed customer data",
+      "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision": "Synthetic contract fixture; not observed customer data",
+      "subject_id": "fixture-0"
+    },
+    "tool_runs": []
+  },
+  "producer": {
+    "name": "Synthetic contract fixture; not observed customer data",
+    "source_commit": "UNRELEASED",
+    "version": "Synthetic contract fixture; not observed customer data"
+  },
+  "project_id": "fixture-0",
+  "schema_version": "1.0.0"
+}

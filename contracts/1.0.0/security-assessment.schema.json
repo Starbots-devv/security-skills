@@ -1,0 +1,546 @@
+{
+  "$id": "urn:starbots:contracts:1.0.0:SecurityAssessment",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "client_id": {
+      "pattern": "^[A-Za-z0-9_-]{1,64}$",
+      "type": "string"
+    },
+    "created_at": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[A-Za-z0-9_-]{1,64}$",
+      "type": "string"
+    },
+    "kind": {
+      "const": "SecurityAssessment"
+    },
+    "payload": {
+      "additionalProperties": false,
+      "properties": {
+        "assessed_at": {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+          "type": "string"
+        },
+        "controls": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "evidence_refs": {
+                "items": {
+                  "pattern": "^[A-Za-z0-9_-]{1,64}$",
+                  "type": "string"
+                },
+                "maxItems": 1000,
+                "minItems": 0,
+                "type": "array"
+              },
+              "external_refs": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "control_id": {
+                      "maxLength": 10000,
+                      "type": "string"
+                    },
+                    "standard": {
+                      "maxLength": 10000,
+                      "type": "string"
+                    },
+                    "url": {
+                      "maxLength": 10000,
+                      "type": "string"
+                    },
+                    "version": {
+                      "maxLength": 10000,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "standard",
+                    "version",
+                    "control_id",
+                    "url"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 1000,
+                "minItems": 0,
+                "type": "array"
+              },
+              "id": {
+                "pattern": "^[A-Za-z0-9_-]{1,64}$",
+                "type": "string"
+              },
+              "mandatory": {
+                "type": "boolean"
+              },
+              "rationale": {
+                "maxLength": 10000,
+                "type": "string"
+              },
+              "state": {
+                "enum": [
+                  "PASS",
+                  "FAIL",
+                  "UNKNOWN",
+                  "NOT_APPLICABLE"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "mandatory",
+              "state",
+              "evidence_refs",
+              "rationale",
+              "external_refs"
+            ],
+            "type": "object"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "type": "array"
+        },
+        "coverage": {
+          "additionalProperties": false,
+          "properties": {
+            "excluded": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^[A-Za-z0-9_-]{1,64}$",
+                    "type": "string"
+                  },
+                  "reason": {
+                    "maxLength": 10000,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "reason"
+                ],
+                "type": "object"
+              },
+              "maxItems": 1000,
+              "minItems": 0,
+              "type": "array"
+            },
+            "missing": {
+              "items": {
+                "pattern": "^[A-Za-z0-9_-]{1,64}$",
+                "type": "string"
+              },
+              "maxItems": 1000,
+              "minItems": 0,
+              "type": "array"
+            },
+            "performed": {
+              "items": {
+                "pattern": "^[A-Za-z0-9_-]{1,64}$",
+                "type": "string"
+              },
+              "maxItems": 1000,
+              "minItems": 0,
+              "type": "array"
+            }
+          },
+          "required": [
+            "performed",
+            "missing",
+            "excluded"
+          ],
+          "type": "object"
+        },
+        "evidence_refs": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "maxLength": 10000,
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "type": "object"
+          },
+          "maxItems": 1000,
+          "minItems": 0,
+          "type": "array"
+        },
+        "expires_at": {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+          "type": "string"
+        },
+        "findings": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "confidence": {
+                "enum": [
+                  "low",
+                  "medium",
+                  "high"
+                ]
+              },
+              "disposition": {
+                "enum": [
+                  "confirmed",
+                  "indicator",
+                  "manual_review",
+                  "justified_false_positive"
+                ]
+              },
+              "external_refs": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "control_id": {
+                      "maxLength": 10000,
+                      "type": "string"
+                    },
+                    "standard": {
+                      "maxLength": 10000,
+                      "type": "string"
+                    },
+                    "url": {
+                      "maxLength": 10000,
+                      "type": "string"
+                    },
+                    "version": {
+                      "maxLength": 10000,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "standard",
+                    "version",
+                    "control_id",
+                    "url"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 1000,
+                "minItems": 0,
+                "type": "array"
+              },
+              "id": {
+                "pattern": "^[A-Za-z0-9_-]{1,64}$",
+                "type": "string"
+              },
+              "impact": {
+                "maxLength": 10000,
+                "type": "string"
+              },
+              "lifecycle": {
+                "enum": [
+                  "open",
+                  "resolved",
+                  "accepted"
+                ]
+              },
+              "location": {
+                "maxLength": 10000,
+                "type": "string"
+              },
+              "recommendation": {
+                "maxLength": 10000,
+                "type": "string"
+              },
+              "redacted_evidence_ref": {
+                "pattern": "^[A-Za-z0-9_-]{1,64}$",
+                "type": "string"
+              },
+              "regression_check": {
+                "maxLength": 10000,
+                "type": "string"
+              },
+              "severity": {
+                "enum": [
+                  "critical",
+                  "high",
+                  "medium",
+                  "low",
+                  "informational"
+                ]
+              },
+              "severity_rationale": {
+                "maxLength": 10000,
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "location",
+              "redacted_evidence_ref",
+              "impact",
+              "severity",
+              "severity_rationale",
+              "confidence",
+              "disposition",
+              "external_refs",
+              "recommendation",
+              "regression_check",
+              "lifecycle"
+            ],
+            "type": "object"
+          },
+          "maxItems": 1000,
+          "minItems": 0,
+          "type": "array"
+        },
+        "policy_digest": {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        "policy_id": {
+          "pattern": "^[A-Za-z0-9_-]{1,64}$",
+          "type": "string"
+        },
+        "policy_version": {
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "readiness": {
+          "additionalProperties": false,
+          "properties": {
+            "reasons": {
+              "items": {
+                "maxLength": 10000,
+                "type": "string"
+              },
+              "maxItems": 1000,
+              "minItems": 0,
+              "type": "array"
+            },
+            "state": {
+              "enum": [
+                "READY",
+                "BLOCKED"
+              ]
+            }
+          },
+          "required": [
+            "state",
+            "reasons"
+          ],
+          "type": "object"
+        },
+        "scope": {
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "subject_ref": {
+          "additionalProperties": false,
+          "properties": {
+            "artifacts": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "path": {
+                    "maxLength": 10000,
+                    "type": "string"
+                  },
+                  "role": {
+                    "maxLength": 10000,
+                    "type": "string"
+                  },
+                  "sha256": {
+                    "pattern": "^[a-f0-9]{64}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "role",
+                  "path",
+                  "sha256"
+                ],
+                "type": "object"
+              },
+              "maxItems": 1000,
+              "minItems": 1,
+              "type": "array"
+            },
+            "manifest_path": {
+              "maxLength": 10000,
+              "type": "string"
+            },
+            "manifest_sha256": {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            "revision": {
+              "maxLength": 10000,
+              "type": "string"
+            },
+            "subject_id": {
+              "pattern": "^[A-Za-z0-9_-]{1,64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "subject_id",
+            "revision",
+            "manifest_path",
+            "manifest_sha256",
+            "artifacts"
+          ],
+          "type": "object"
+        },
+        "tool_runs": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "advisory_digest": {
+                "anyOf": [
+                  {
+                    "pattern": "^[a-f0-9]{64}$",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "output_ref": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "path": {
+                        "maxLength": 10000,
+                        "type": "string"
+                      },
+                      "sha256": {
+                        "pattern": "^[a-f0-9]{64}$",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "path",
+                      "sha256"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "rules_digest": {
+                "anyOf": [
+                  {
+                    "pattern": "^[a-f0-9]{64}$",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "status": {
+                "enum": [
+                  "requested",
+                  "executed",
+                  "error",
+                  "timeout",
+                  "not_run"
+                ]
+              },
+              "tool": {
+                "maxLength": 10000,
+                "type": "string"
+              },
+              "tool_version": {
+                "maxLength": 10000,
+                "type": "string"
+              }
+            },
+            "required": [
+              "tool",
+              "tool_version",
+              "rules_digest",
+              "advisory_digest",
+              "status",
+              "output_ref"
+            ],
+            "type": "object"
+          },
+          "maxItems": 1000,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "required": [
+        "subject_ref",
+        "policy_id",
+        "policy_version",
+        "policy_digest",
+        "assessed_at",
+        "expires_at",
+        "scope",
+        "evidence_refs",
+        "tool_runs",
+        "controls",
+        "findings",
+        "coverage",
+        "readiness"
+      ],
+      "type": "object"
+    },
+    "producer": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "source_commit": {
+          "pattern": "^(?:[a-f0-9]{40}|UNRELEASED)$",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 10000,
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "source_commit"
+      ],
+      "type": "object"
+    },
+    "project_id": {
+      "pattern": "^[A-Za-z0-9_-]{1,64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "client_id",
+    "project_id",
+    "created_at",
+    "producer",
+    "payload"
+  ],
+  "title": "SecurityAssessment",
+  "type": "object"
+}

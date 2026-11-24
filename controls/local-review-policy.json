@@ -1,0 +1,47 @@
+{
+  "advisory_snapshot_expires_at": "2026-10-25T02:02:48Z",
+  "id": "starbots-local-review",
+  "readiness_table_sha256": "91211ac7075cd88938b1c64dfae8d22775425dcb105b495beaafdfe539f206ca",
+  "required_controls": [
+    {
+      "description": "Actual local HTTP authorization and tenant probes",
+      "id": "SB-AUTH",
+      "mandatory": true
+    },
+    {
+      "description": "Actual isolated PostgreSQL USING/WITH CHECK and pooled context probes",
+      "id": "SB-RLS",
+      "mandatory": true
+    },
+    {
+      "description": "Pinned Gitleaks with redacted output and complete local scope",
+      "id": "SB-SECRETS",
+      "mandatory": true
+    },
+    {
+      "description": "Pinned full-offline OSV with fresh complete ecosystem data",
+      "id": "SB-DEPENDENCIES",
+      "mandatory": true
+    },
+    {
+      "description": "Pinned Trivy IaC with offline embedded checks",
+      "id": "SB-IAC",
+      "mandatory": true
+    },
+    {
+      "description": "Deterministic client/tool capability enforcement; no model resistance claim",
+      "id": "SB-AGENT-BOUNDARY",
+      "mandatory": true
+    }
+  ],
+  "required_tools": [
+    "api-fixture",
+    "postgresql-rls",
+    "gitleaks",
+    "osv-scanner",
+    "trivy",
+    "agent-boundary"
+  ],
+  "scope": "Actual local synthetic fixtures only; no production, certification or execution approval",
+  "version": "1.0.0"
+}

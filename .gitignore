@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.local-output/
+.local-evidence/
+src/starbots_security/data/build.json

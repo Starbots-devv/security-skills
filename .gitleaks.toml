@@ -1,0 +1,20 @@
+# Gitleaks configuration for this repository.
+#
+# It keeps every default rule and allowlists only the deliberately vulnerable
+# synthetic scanner fixture (and the test that checks it is redacted). That
+# fixture holds an obviously fake GitHub-token-shaped value ("ghp_FAKE0123...")
+# which cannot authenticate; it exists so the Supply Chain skill can demonstrate
+# a detected secret. Any other finding is still reported.
+
+title = "security-skills"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Synthetic, non-functional credential used by the vulnerable scanner fixture"
+paths = [
+  '''(^|[\\/])examples[\\/]scanners[\\/]vulnerable[\\/]gitleaks[\\/]sample\.env$''',
+  '''(^|[\\/])src[\\/]starbots_security[\\/]data[\\/]scanners[\\/]vulnerable[\\/]gitleaks[\\/]sample\.env$''',
+  '''(^|[\\/])tests[\\/]integration[\\/]test_scanners\.py$''',
+]

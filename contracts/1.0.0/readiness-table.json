@@ -1,0 +1,42 @@
+{
+  "blocking_dispositions": [
+    "confirmed",
+    "indicator",
+    "manual_review"
+  ],
+  "blocking_lifecycles": [
+    "open",
+    "accepted"
+  ],
+  "blocking_severities": [
+    "critical"
+  ],
+  "blocking_tool_statuses": [
+    "requested",
+    "error",
+    "timeout",
+    "not_run"
+  ],
+  "mandatory": {
+    "FAIL": {
+      "allow": false,
+      "requires_evidence": false
+    },
+    "NOT_APPLICABLE": {
+      "allow": true,
+      "requires_evidence": true
+    },
+    "PASS": {
+      "allow": true,
+      "requires_evidence": true
+    },
+    "UNKNOWN": {
+      "allow": false,
+      "requires_evidence": false
+    }
+  },
+  "missing_coverage_blocks": true,
+  "require_mandatory": true,
+  "require_performed_for_pass": true,
+  "version": "1.0.0"
+}
